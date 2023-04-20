@@ -8,7 +8,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gray-800 shadow-lg">
+        <nav className="bg-gray-800 shadow-lg z-10 fixed top-0 left-0 w-full">
             <div className="mx-auto px-4 py-2 max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex justify-between">
                     <div className="flex-shrink-0">

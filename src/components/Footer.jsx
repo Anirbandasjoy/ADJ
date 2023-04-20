@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 pt-16 p-5">
+        <footer className="bg-gray-800 pt-16 p-5 z-[-20]  bottom-0 left-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="grid grid-cols-2 gap-8 xl:col-span-2">
@@ -77,13 +77,15 @@ const Footer = () => {
                                         type="email"
                                         required
                                         className="appearance-none w-full py-2 px-4 bg-gray-900 border border-gray-700 rounded-md text-gray-300 placeholder-gray-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:max-w-xs"
-                                      
+
                                     /> <br />
                                     <button className='bg-red-500 text-yellow-100 p-1  ml-3 w-34 h-10 text-sm px-5 rounded-full' type='submit'>Subscribe</button>
                                 </form>
                             </div>
                         </div>
+                        
                     </div>
+                    
                 </div>
             </div>
         </footer>)
