@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Product = () => {
   const { title } = useParams()
@@ -11,19 +13,22 @@ const Product = () => {
       const response = await fetch('https://dummyjson.com/products');
       const products = await response.json();
       const AllProducts = products.products
-      const singleProduct = AllProducts.filter((pro) => pro.title == title);
+      const singleProduct = AllProducts.filter((pro) => pro.title === title);
       setProduct(singleProduct);
     };
 
     fetchData();
   }, []);
+  const hendelShowMessagean = () => {
+    toast("Item is Add To Card")
+   }
   return (
     <div className='p-16 mt-14 bg-gray-800'>
       {
         product.map((pro) => {
           return <div className='flex gap-14 bg-slate-500 p-10 rounded-sm '>
             <div>
-              <img className='rounded-md' src={pro.thumbnail} alt={pro.title} />
+              <img width="500" height="400" className='rounded-md' src={pro.thumbnail} alt={pro.title} />
 
               <p className="text-gray-900 font-semibold mt-4 text-xl">{pro.category}</p>
             </div>
@@ -39,7 +44,8 @@ const Product = () => {
                 ${pro.price}
               </span> <span className='text-[10px] text-gray-900 line-through'> ${pro.discountPercentage}</span> </p>
 
-              <p className='mt-12 text-center bg-slate-600 p-2 hover:bg-gray-900 hover:text-yellow-100 rounded-full'>Add to card</p>
+              <p onClick={hendelShowMessagean} className='mt-12 text-center cursor-pointer bg-slate-600 p-2 hover:bg-gray-900 hover:text-yellow-100 rounded-full'>Add to card</p>
+              <ToastContainer />
             </div>
           </div>
         })

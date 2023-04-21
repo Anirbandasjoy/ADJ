@@ -1,0 +1,17 @@
+.carousel-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 20px;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+  }  
